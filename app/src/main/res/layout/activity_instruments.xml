@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Instruments">
+
+    <ImageView
+        android:id="@+id/menubg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/menu" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/backbtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/backbutton" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gltop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <ImageView
+            android:id="@+id/violin"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/gl2"
+            app:layout_constraintEnd_toStartOf="@+id/piano"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gltop"
+            app:srcCompat="@drawable/violin" />
+
+        <ImageView
+            android:id="@+id/piano"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toTopOf="@+id/gl2"
+            app:layout_constraintEnd_toStartOf="@+id/kalinba"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/violin"
+            app:layout_constraintTop_toTopOf="@+id/gltop"
+            app:srcCompat="@drawable/piano" />
+
+        <ImageView
+            android:id="@+id/kalinba"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toTopOf="@+id/gl2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/piano"
+            app:layout_constraintTop_toTopOf="@+id/gltop"
+            app:srcCompat="@drawable/kalimba" />
+
+        <Button
+            android:id="@+id/violinbtn"
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_shape"
+            android:text="小提琴"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toStartOf="@+id/pianobtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl2" />
+
+        <Button
+            android:id="@+id/pianobtn"
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_shape"
+            android:text="鋼琴"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toStartOf="@+id/kalinbabtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/violinbtn"
+            app:layout_constraintTop_toTopOf="@+id/gl2" />
+
+        <Button
+            android:id="@+id/kalinbabtn"
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_shape"
+            android:text="卡林巴琴"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/pianobtn"
+            app:layout_constraintTop_toTopOf="@+id/gl2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <ImageView
+            android:id="@+id/guitar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toTopOf="@+id/gl3"
+            app:layout_constraintEnd_toStartOf="@+id/drum"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/guitar" />
+
+        <ImageView
+            android:id="@+id/flute"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toTopOf="@+id/gl3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/drum"
+            app:srcCompat="@drawable/flute" />
+
+        <ImageView
+            android:id="@+id/drum"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toTopOf="@+id/gl3"
+            app:layout_constraintEnd_toStartOf="@+id/flute"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/guitar"
+            app:srcCompat="@drawable/drum" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <Button
+            android:id="@+id/guitarbtn"
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:background="@drawable/btn_shape"
+            android:text="吉他"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/glbot"
+            app:layout_constraintEnd_toStartOf="@+id/drumbtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/drumbtn"
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:background="@drawable/btn_shape"
+            android:text="爵士鼓"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/glbot"
+            app:layout_constraintEnd_toStartOf="@+id/flutebtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/guitarbtn" />
+
+        <Button
+            android:id="@+id/flutebtn"
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:background="@drawable/btn_shape"
+            android:text="長笛"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/glbot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/drumbtn" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glbot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
