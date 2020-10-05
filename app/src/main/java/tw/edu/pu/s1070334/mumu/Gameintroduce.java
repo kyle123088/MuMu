@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
 public class Gameintroduce extends AppCompatActivity {
+    static MediaPlayer mper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +35,8 @@ public class Gameintroduce extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
+        mper = MediaPlayer.create(this, R.raw.gamerule);
+        mper.start();
     }
 }

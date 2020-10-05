@@ -9,7 +9,9 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+    static MediaPlayer init;
     static MediaPlayer mper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,30 +35,51 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(it);
             }
         });
+        freemode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent();
+                it.setClass(MainActivity.this, Freeplaychoose.class);
+                startActivity(it);
+            }
+        });
+        init = MediaPlayer.create(this, R.raw.initial);
         mper = MediaPlayer.create(this, R.raw.bgmusic);
         mper.setLooping(true);
+
     }
+
     @Override
-    public void onDestroy(){
+    public void onDestroy() {
         super.onDestroy();
-        if(mper != null){
+        if (mper != null) {
             mper.release();
+        }
+        if (init != null) {
+            init.release();
         }
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if(mper != null && mper.isPlaying()) {
+        if (mper != null && mper.isPlaying()) {
             mper.pause();
+        }
+        if (init != null && init.isPlaying()) {
+            init.pause();
+            init.seekTo(0);
         }
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
-        if(mper != null) {
+        if (mper != null) {
             mper.start();
+        }
+        if (init != null) {
+            init.start();
         }
     }
 }

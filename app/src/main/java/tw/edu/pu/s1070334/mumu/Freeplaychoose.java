@@ -3,21 +3,20 @@ package tw.edu.pu.s1070334.mumu;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class Instruments extends AppCompatActivity {
+public class Freeplaychoose extends AppCompatActivity {
     static MediaPlayer mper;
-    static String str = "";
+    static String choose = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_instruments);
+        setContentView(R.layout.activity_freeplaychoose);
 
         mper = MediaPlayer.create(this, R.raw.pick);
         mper.start();
@@ -26,9 +25,9 @@ public class Instruments extends AppCompatActivity {
         violinbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = "violin";
+                choose = "violin";
                 Intent it = new Intent();
-                it.setClass(Instruments.this, Instrumentsintroduce.class);
+                it.setClass(Freeplaychoose.this, Freeplay.class);
                 startActivity(it);
             }
         });
@@ -37,9 +36,9 @@ public class Instruments extends AppCompatActivity {
         pianobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = "piano";
+                choose = "piano";
                 Intent it = new Intent();
-                it.setClass(Instruments.this, Instrumentsintroduce.class);
+                it.setClass(Freeplaychoose.this, Freeplay.class);
                 startActivity(it);
             }
         });
@@ -48,9 +47,9 @@ public class Instruments extends AppCompatActivity {
         kalinbabtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = "kalinba";
+                choose = "kalinba";
                 Intent it = new Intent();
-                it.setClass(Instruments.this, Instrumentsintroduce.class);
+                it.setClass(Freeplaychoose.this, Freeplay.class);
                 startActivity(it);
             }
         });
@@ -59,9 +58,9 @@ public class Instruments extends AppCompatActivity {
         guitarbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = "guitar";
+                choose = "guitar";
                 Intent it = new Intent();
-                it.setClass(Instruments.this, Instrumentsintroduce.class);
+                it.setClass(Freeplaychoose.this, Freeplay.class);
                 startActivity(it);
             }
         });
@@ -70,9 +69,9 @@ public class Instruments extends AppCompatActivity {
         drumbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = "drum";
+                choose = "drum";
                 Intent it = new Intent();
-                it.setClass(Instruments.this, Instrumentsintroduce.class);
+                it.setClass(Freeplaychoose.this, Freeplay.class);
                 startActivity(it);
             }
         });
@@ -81,9 +80,9 @@ public class Instruments extends AppCompatActivity {
         flutebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = "flute";
+                choose = "flute";
                 Intent it = new Intent();
-                it.setClass(Instruments.this, Instrumentsintroduce.class);
+                it.setClass(Freeplaychoose.this, Freeplay.class);
                 startActivity(it);
             }
         });
@@ -95,7 +94,6 @@ public class Instruments extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
     @Override

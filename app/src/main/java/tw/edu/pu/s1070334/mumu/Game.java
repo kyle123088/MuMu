@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Random;
 import java.util.Vector;
 
@@ -51,9 +53,9 @@ public class Game extends AppCompatActivity {
         violin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rSound==1800016) {
+                if (rSound == 1800016) {
                     currentScore += 5;
-                    score.setText("你的分數為:"+currentScore);
+                    score.setText("你的分數為:" + currentScore);
                 } else {
                     gameOver();
                 }
@@ -63,9 +65,9 @@ public class Game extends AppCompatActivity {
         piano.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rSound==1800005) {
+                if (rSound == 1800005) {
                     currentScore += 5;
-                    score.setText("你的分數為:"+currentScore);
+                    score.setText("你的分數為:" + currentScore);
                 } else {
                     gameOver();
                 }
@@ -75,9 +77,9 @@ public class Game extends AppCompatActivity {
         kalinba.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rSound==1800016) {
+                if (rSound == 1800016) {
                     currentScore += 5;
-                    score.setText("你的分數為:"+currentScore);
+                    score.setText("你的分數為:" + currentScore);
                 } else {
                     gameOver();
                 }
@@ -87,9 +89,9 @@ public class Game extends AppCompatActivity {
         guitar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rSound==1800008) {
+                if (rSound == 1800008) {
                     currentScore += 5;
-                    score.setText("你的分數為:"+currentScore);
+                    score.setText("你的分數為:" + currentScore);
                 } else {
                     gameOver();
                 }
@@ -99,9 +101,9 @@ public class Game extends AppCompatActivity {
         drum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rSound==1800004) {
+                if (rSound == 1800004) {
                     currentScore += 5;
-                    score.setText("你的分數為:"+currentScore);
+                    score.setText("你的分數為:" + currentScore);
                 } else {
                     gameOver();
                 }
@@ -111,9 +113,9 @@ public class Game extends AppCompatActivity {
         flute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rSound==1800003) {
+                if (rSound == 1800003) {
                     currentScore += 5;
-                    score.setText("你的分數為:"+currentScore);
+                    score.setText("你的分數為:" + currentScore);
                 } else {
                     gameOver();
                 }
@@ -121,18 +123,18 @@ public class Game extends AppCompatActivity {
         });
     }
 
-    public void playRandomMusic(){
+    public void playRandomMusic() {
         Random r = new Random();
         int randomInt = r.nextInt(soundList.size());
         rSound = soundList.get(randomInt);
-        MediaPlayer mper = MediaPlayer.create(this,rSound);
+        MediaPlayer mper = MediaPlayer.create(this, rSound);
         mper.start();
         mper.setLooping(true);
     }
 
-    public void gameOver(){
+    public void gameOver() {
         AlertDialog.Builder alertDialogBulider = new AlertDialog.Builder(this);
-        alertDialogBulider.setMessage("哎呀你答錯了，本次成績為：%d，別氣餒下次再挑戰"+currentScore);
+        alertDialogBulider.setMessage("哎呀你答錯了，本次成績為：%d，別氣餒下次再挑戰" + currentScore);
         alertDialogBulider.setCancelable(false);
         alertDialogBulider.setPositiveButton("再玩一次", new DialogInterface.OnClickListener() {
             @Override
