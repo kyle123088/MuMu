@@ -69,9 +69,8 @@ public class Freeplaychoose extends AppCompatActivity {
         drumbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                choose = "drum";
                 Intent it = new Intent();
-                it.setClass(Freeplaychoose.this, Freeplay.class);
+                it.setClass(Freeplaychoose.this, Freeplaydrum.class);
                 startActivity(it);
             }
         });

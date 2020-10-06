@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Freeplaydrum">
+
+    <ImageView
+        android:id="@+id/freebg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/menu" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/backbtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/backbutton" />
+
+        <ImageView
+            android:id="@+id/drum"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/violin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/violin"
+            app:srcCompat="@drawable/drum" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <Button
+            android:id="@+id/bigdrum"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="大鼓"
+            android:textSize="14sp"
+            android:background="@drawable/btn_shape"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/smalldrum"
+            app:layout_constraintEnd_toStartOf="@+id/gl2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/gl"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/smalldrum"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="小鼓"
+            android:textSize="14sp"
+            android:background="@drawable/btn_shape"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/tondrum"
+            app:layout_constraintEnd_toStartOf="@+id/gl2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/gl"
+            app:layout_constraintTop_toBottomOf="@+id/bigdrum" />
+
+        <Button
+            android:id="@+id/tondrum"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="筒鼓"
+            android:textSize="14sp"
+            android:background="@drawable/btn_shape"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gl2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/gl"
+            app:layout_constraintTop_toBottomOf="@+id/smalldrum" />
+
+        <Button
+            android:id="@+id/falldrum"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="落地鼓"
+            android:textSize="14sp"
+            android:background="@drawable/btn_shape"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/footcymbals"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/gl2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/footcymbals"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="腳踏鈸"
+            android:textSize="14sp"
+            android:background="@drawable/btn_shape"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/cymbals"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/gl2"
+            app:layout_constraintTop_toBottomOf="@+id/falldrum" />
+
+        <Button
+            android:id="@+id/cymbals"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="鈸"
+            android:textSize="14sp"
+            android:background="@drawable/btn_shape"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/gl2"
+            app:layout_constraintTop_toBottomOf="@+id/footcymbals" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

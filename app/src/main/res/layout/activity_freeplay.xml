@@ -62,15 +62,6 @@
             app:srcCompat="@drawable/guitar" />
 
         <ImageView
-            android:id="@+id/drum"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/violin"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/violin"
-            app:srcCompat="@drawable/drum" />
-
-        <ImageView
             android:id="@+id/flute"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
@@ -97,8 +88,8 @@
             android:id="@+id/do_l"
             android:layout_width="80dp"
             android:layout_height="40dp"
-            android:background="@drawable/btn_shape"
             android:text="低音Do"
+            android:background="@drawable/btn_shape"
             android:textColor="@android:color/white"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/mi"

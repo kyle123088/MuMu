@@ -39,4 +39,29 @@ public class Gameintroduce extends AppCompatActivity {
         mper = MediaPlayer.create(this, R.raw.gamerule);
         mper.start();
     }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(mper != null){
+            mper.release();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if(mper != null && mper.isPlaying()) {
+            mper.pause();
+            mper.seekTo(0);
+        }
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        if(mper != null) {
+            mper.start();
+        }
+    }
 }

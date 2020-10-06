@@ -16,6 +16,9 @@ public class Freeplay extends AppCompatActivity {
     static MediaPlayer violin_do, violin_re, violin_mi, violin_fa, violin_so, violin_la, violin_si, violin_h_do;
     static MediaPlayer piano_do, piano_re, piano_mi, piano_fa, piano_so, piano_la, piano_si, piano_h_do;
     static MediaPlayer kalimba_do, kalimba_re, kalimba_mi, kalimba_fa, kalimba_so, kalimba_la, kalimba_si, kalimba_h_do;
+    static MediaPlayer guitar_do, guitar_re, guitar_mi, guitar_fa, guitar_so, guitar_la, guitar_si, guitar_h_do;
+//    static MediaPlayer jazz, guitar_re, guitar_mi, guitar_fa, guitar_so, guitar_la, guitar_si, guitar_h_do;
+    static MediaPlayer flute_do, flute_re, flute_mi, flute_fa, flute_so, flute_la, flute_si, flute_h_do;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +28,57 @@ public class Freeplay extends AppCompatActivity {
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (choose.equals("violin")) {
+                    violin_do.release();
+                    violin_re.release();
+                    violin_mi.release();
+                    violin_fa.release();
+                    violin_so.release();
+                    violin_la.release();
+                    violin_si.release();
+                    violin_h_do.release();
+                } else if (choose.equals("piano")) {
+                    piano_do.release();
+                    piano_re.release();
+                    piano_mi.release();
+                    piano_fa.release();
+                    piano_so.release();
+                    piano_la.release();
+                    piano_si.release();
+                    piano_h_do.release();
+                } else if (choose.equals("kalimba")) {
+                    kalimba_do.release();
+                    kalimba_re.release();
+                    kalimba_mi.release();
+                    kalimba_fa.release();
+                    kalimba_so.release();
+                    kalimba_la.release();
+                    kalimba_si.release();
+                    kalimba_h_do.release();
+                } else if (choose.equals("guitar")) {
+                    guitar_do.release();
+                    guitar_re.release();
+                    guitar_mi.release();
+                    guitar_fa.release();
+                    guitar_so.release();
+                    guitar_la.release();
+                    guitar_si.release();
+                    guitar_h_do.release();
+                } else if (choose.equals("flute")) {
+                    flute_do.release();
+                    flute_re.release();
+                    flute_mi.release();
+                    flute_fa.release();
+                    flute_so.release();
+                    flute_la.release();
+                    flute_si.release();
+                    flute_h_do.release();
+                }
                 finish();
             }
         });
 
-        final ImageView violin = findViewById(R.id.violin);
+        ImageView violin = findViewById(R.id.violin);
         violin.setVisibility(View.INVISIBLE);
         ImageView piano = findViewById(R.id.piano);
         piano.setVisibility(View.INVISIBLE);
@@ -37,8 +86,6 @@ public class Freeplay extends AppCompatActivity {
         kalinba.setVisibility(View.INVISIBLE);
         ImageView guitar = findViewById(R.id.guitar);
         guitar.setVisibility(View.INVISIBLE);
-        ImageView drum = findViewById(R.id.drum);
-        drum.setVisibility(View.INVISIBLE);
         ImageView flute = findViewById(R.id.flute);
         flute.setVisibility(View.INVISIBLE);
 
@@ -95,6 +142,7 @@ public class Freeplay extends AppCompatActivity {
                     violin_la.start();
                 }
             });
+
             Button si = findViewById(R.id.si);
             si.setOnClickListener(new Button.OnClickListener() {
                 @Override
@@ -102,6 +150,7 @@ public class Freeplay extends AppCompatActivity {
                     violin_si.start();
                 }
             });
+
             Button do_h = findViewById(R.id.do_h);
             do_h.setOnClickListener(new Button.OnClickListener() {
                 @Override
@@ -160,6 +209,7 @@ public class Freeplay extends AppCompatActivity {
                     piano_la.start();
                 }
             });
+
             Button si = findViewById(R.id.si);
             si.setOnClickListener(new Button.OnClickListener() {
                 @Override
@@ -167,6 +217,7 @@ public class Freeplay extends AppCompatActivity {
                     piano_si.start();
                 }
             });
+
             Button do_h = findViewById(R.id.do_h);
             do_h.setOnClickListener(new Button.OnClickListener() {
                 @Override
@@ -225,6 +276,7 @@ public class Freeplay extends AppCompatActivity {
                     kalimba_la.start();
                 }
             });
+
             Button si = findViewById(R.id.si);
             si.setOnClickListener(new Button.OnClickListener() {
                 @Override
@@ -232,6 +284,7 @@ public class Freeplay extends AppCompatActivity {
                     kalimba_si.start();
                 }
             });
+
             Button do_h = findViewById(R.id.do_h);
             do_h.setOnClickListener(new Button.OnClickListener() {
                 @Override
@@ -242,11 +295,138 @@ public class Freeplay extends AppCompatActivity {
 
         } else if (choose.equals("guitar")) {
             guitar.setVisibility(View.VISIBLE);
+            createGuitarList();;
+            Button do_l = findViewById(R.id.do_l);
+            do_l.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    guitar_do.start();
+                }
+            });
 
-        } else if (choose.equals("drum")) {
-            drum.setVisibility(View.VISIBLE);
-        } else if (choose.equals("flute")) {
+            Button re = findViewById(R.id.re);
+            re.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    guitar_re.start();
+                }
+            });
+
+            Button mi = findViewById(R.id.mi);
+            mi.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    guitar_mi.start();
+                }
+            });
+
+            Button fa = findViewById(R.id.fa);
+            fa.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    guitar_fa.start();
+                }
+            });
+
+            Button sol = findViewById(R.id.sol);
+            sol.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    guitar_so.start();
+                }
+            });
+
+            Button la = findViewById(R.id.la);
+            la.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    guitar_la.start();
+                }
+            });
+
+            Button si = findViewById(R.id.si);
+            si.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    guitar_si.start();
+                }
+            });
+
+            Button do_h = findViewById(R.id.do_h);
+            do_h.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    guitar_h_do.start();
+                }
+            });
+
+        }  else if (choose.equals("flute")) {
             flute.setVisibility(View.VISIBLE);
+            createFluteList();
+            Button do_l = findViewById(R.id.do_l);
+            do_l.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    flute_do.start();
+                }
+            });
+
+            Button re = findViewById(R.id.re);
+            re.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    flute_re.start();
+                }
+            });
+
+            Button mi = findViewById(R.id.mi);
+            mi.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    flute_mi.start();
+                }
+            });
+
+            Button fa = findViewById(R.id.fa);
+            fa.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    flute_fa.start();
+                }
+            });
+
+            Button sol = findViewById(R.id.sol);
+            sol.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    flute_so.start();
+                }
+            });
+
+            Button la = findViewById(R.id.la);
+            la.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    flute_la.start();
+                }
+            });
+
+            Button si = findViewById(R.id.si);
+            si.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    flute_si.start();
+                }
+            });
+
+            Button do_h = findViewById(R.id.do_h);
+            do_h.setOnClickListener(new Button.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    flute_h_do.start();
+                }
+            });
+
         }
     }
 
@@ -282,35 +462,35 @@ public class Freeplay extends AppCompatActivity {
         kalimba_si = MediaPlayer.create(this, R.raw.kalimba_si);
         kalimba_h_do = MediaPlayer.create(this, R.raw.kalimba_h_do);
     }
-//
-//    public void createGuitarList() {
-//        guitarList.add(R.raw.guitar_do);
-//        guitarList.add(R.raw.guitar_re);
-//        guitarList.add(R.raw.guitar_mi);
-//        guitarList.add(R.raw.guitar_fa);
-//        guitarList.add(R.raw.guitar_so);
-//        guitarList.add(R.raw.guitar_la);
-//        guitarList.add(R.raw.guitar_si);
-//        guitarList.add(R.raw.guitar_h_do);
-//    }
-//
+
+    public void createGuitarList() {
+        guitar_do = MediaPlayer.create(this, R.raw.guitar_do);
+        guitar_re = MediaPlayer.create(this, R.raw.guitar_re);
+        guitar_mi = MediaPlayer.create(this, R.raw.guitar_mi);
+        guitar_fa = MediaPlayer.create(this, R.raw.guitar_fa);
+        guitar_so = MediaPlayer.create(this, R.raw.guitar_so);
+        guitar_la = MediaPlayer.create(this, R.raw.guitar_la);
+        guitar_si = MediaPlayer.create(this, R.raw.guitar_si);
+        guitar_h_do = MediaPlayer.create(this, R.raw.guitar_h_do);
+    }
+
 //    public void createDrumList() {
-//        drumList.add(R.raw.jazz_bigdrum);
-//        drumList.add(R.raw.jazz_smalldrum);
-//        drumList.add(R.raw.jazz_falldrum);
-//        drumList.add(R.raw.jazz_footcymbals);
-//        drumList.add(R.raw.jazz_copperdrum);
-//        drumList.add(R.raw.jazz_cymbals);
+//        jazz_bigdrum = MediaPlayer.create(this, R.raw.jazz_bigdrum);
+//        jazz_smalldrum = MediaPlayer.create(this, R.raw.jazz_smalldrum);
+//        jazz_falldrum = MediaPlayer.create(this, R.raw.jazz_falldrum);
+//        jazz_footcymbals = MediaPlayer.create(this, R.raw.jazz_footcymbals);
+//        jazz_tondrum = MediaPlayer.create(this, R.raw.jazz_tondrum);
+//        jazz_cymbals = MediaPlayer.create(this, R.raw.jazz_cymbals);
 //    }
-//
-//    public void createFluteList() {
-//        fluteList.add(R.raw.flute_do);
-//        fluteList.add(R.raw.flute_re);
-//        fluteList.add(R.raw.flute_mi);
-//        fluteList.add(R.raw.flute_fa);
-//        fluteList.add(R.raw.flute_so);
-//        fluteList.add(R.raw.flute_la);
-//        fluteList.add(R.raw.flute_si);
-//        fluteList.add(R.raw.flute_h_do);
-//    }
+
+    public void createFluteList() {
+        flute_do = MediaPlayer.create(this, R.raw.flute_do);
+        flute_re = MediaPlayer.create(this, R.raw.flute_re);
+        flute_mi = MediaPlayer.create(this, R.raw.flute_mi);
+        flute_fa = MediaPlayer.create(this, R.raw.flute_fa);
+        flute_so = MediaPlayer.create(this, R.raw.flute_so);
+        flute_la = MediaPlayer.create(this, R.raw.flute_la);
+        flute_si = MediaPlayer.create(this, R.raw.flute_si);
+        flute_h_do = MediaPlayer.create(this, R.raw.flute_h_do);
+    }
 }

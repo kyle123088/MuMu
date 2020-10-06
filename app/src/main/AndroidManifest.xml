@@ -10,8 +10,15 @@
         android:screenOrientation="landscape"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Fullscreen">
-        <activity android:name=".Freeplaychoose" android:screenOrientation="landscape"></activity>
-        <activity android:name=".Freeplay" android:screenOrientation="landscape"/>
+        <activity
+            android:name=".Freeplaydrum"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".Freeplaychoose"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Freeplay"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".Game"
             android:screenOrientation="landscape" />

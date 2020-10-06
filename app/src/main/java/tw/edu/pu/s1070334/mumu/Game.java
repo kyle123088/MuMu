@@ -21,6 +21,7 @@ public class Game extends AppCompatActivity {
     private int currentScore = 0;
     ImageView violin, piano, kalinba, guitar, drum, flute;
     TextView score;
+    MediaPlayer mper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +54,10 @@ public class Game extends AppCompatActivity {
         violin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rSound == 1800016) {
+                if (rSound == R.raw.violinmusic) {
                     currentScore += 5;
                     score.setText("你的分數為:" + currentScore);
+                    playRandomMusic();
                 } else {
                     gameOver();
                 }
@@ -65,33 +67,39 @@ public class Game extends AppCompatActivity {
         piano.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rSound == 1800005) {
+                if (rSound == R.raw.pianomusic) {
                     currentScore += 5;
                     score.setText("你的分數為:" + currentScore);
+                    mper.release();
+                    playRandomMusic();
                 } else {
                     gameOver();
                 }
             }
         });
 
-        kalinba.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (rSound == 1800016) {
-                    currentScore += 5;
-                    score.setText("你的分數為:" + currentScore);
-                } else {
-                    gameOver();
-                }
-            }
-        });
+//        kalinba.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (rSound == R.raw.kalinbamusic) {
+//                    currentScore += 5;
+//                    score.setText("你的分數為:" + currentScore);
+//                    mper.release();
+//                    playRandomMusic();
+//                } else {
+//                    gameOver();
+//                }
+//            }
+//        });
 
         guitar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rSound == 1800008) {
+                if (rSound == R.raw.guitarmusic) {
                     currentScore += 5;
                     score.setText("你的分數為:" + currentScore);
+                    mper.release();
+                    playRandomMusic();
                 } else {
                     gameOver();
                 }
@@ -101,9 +109,11 @@ public class Game extends AppCompatActivity {
         drum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rSound == 1800004) {
+                if (rSound == R.raw.drummusic) {
                     currentScore += 5;
                     score.setText("你的分數為:" + currentScore);
+                    mper.release();
+                    playRandomMusic();
                 } else {
                     gameOver();
                 }
@@ -113,9 +123,11 @@ public class Game extends AppCompatActivity {
         flute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rSound == 1800003) {
+                if (rSound == R.raw.flutemusic) {
                     currentScore += 5;
                     score.setText("你的分數為:" + currentScore);
+                    mper.release();
+                    playRandomMusic();
                 } else {
                     gameOver();
                 }
@@ -127,7 +139,7 @@ public class Game extends AppCompatActivity {
         Random r = new Random();
         int randomInt = r.nextInt(soundList.size());
         rSound = soundList.get(randomInt);
-        MediaPlayer mper = MediaPlayer.create(this, rSound);
+        mper = MediaPlayer.create(this, rSound);
         mper.start();
         mper.setLooping(true);
     }
