@@ -201,6 +201,7 @@ public class Game extends AppCompatActivity {
         bulider.setPositiveButton("再玩一次", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                finish();
                 startActivity(new Intent(getApplicationContext(), Game.class));
             }
         });
