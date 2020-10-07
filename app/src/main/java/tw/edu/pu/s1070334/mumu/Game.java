@@ -57,6 +57,7 @@ public class Game extends AppCompatActivity {
                 if (rSound == R.raw.violinmusic) {
                     currentScore += 5;
                     score.setText("你的分數為:" + currentScore);
+                    mper.release();
                     playRandomMusic();
                 } else {
                     gameOver();
@@ -145,12 +146,14 @@ public class Game extends AppCompatActivity {
     }
 
     public void gameOver() {
+        mper.release();
         AlertDialog.Builder alertDialogBulider = new AlertDialog.Builder(this);
-        alertDialogBulider.setMessage("哎呀你答錯了，本次成績為：%d，別氣餒下次再挑戰" + currentScore);
+        alertDialogBulider.setMessage("哎呀你答錯了，本次成績為：" + currentScore + "，別氣餒下次再挑戰");
         alertDialogBulider.setCancelable(false);
         alertDialogBulider.setPositiveButton("再玩一次", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                finish();
                 startActivity(new Intent(getApplicationContext(), Game.class));
             }
         });
@@ -160,5 +163,6 @@ public class Game extends AppCompatActivity {
                 finish();
             }
         });
+        alertDialogBulider.show();
     }
 }
