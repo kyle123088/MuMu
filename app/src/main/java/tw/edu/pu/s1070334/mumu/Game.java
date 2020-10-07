@@ -3,13 +3,14 @@ package tw.edu.pu.s1070334.mumu;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
@@ -23,6 +24,7 @@ public class Game extends AppCompatActivity {
     ImageView violin, piano, kalinba, guitar, drum, flute;
     TextView score;
     MediaPlayer mper;
+    Dialog gameoverdialog, windialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class Game extends AppCompatActivity {
         drum = findViewById(R.id.drum);
         flute = findViewById(R.id.flute);
         score = findViewById(R.id.score);
+        gameoverdialog = new Dialog(this);
+        windialog = new Dialog(this);
 
         loadingMusic();
         playRandomMusic();
@@ -180,45 +184,45 @@ public class Game extends AppCompatActivity {
 
     public void gameOver() {
         mper.release();
-        AlertDialog.Builder bulider = new AlertDialog.Builder(this);
-        bulider.setMessage("哎呀你答錯了，本次成績為："+ currentScore +"，別氣餒下次再挑戰");
-        bulider.setCancelable(false);
-        bulider.setPositiveButton("再玩一次", new DialogInterface.OnClickListener() {
+        gameoverdialog.setContentView(R.layout.gameover_layout_dialog);
+        gameoverdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        ImageView imageViewClose = gameoverdialog.findViewById(R.id.imageViewClose);
+        imageViewClose.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View v) {
                 finish();
-                startActivity(new Intent(getApplication(), Game.class));
             }
         });
-        bulider.setNegativeButton("結束", new DialogInterface.OnClickListener() {
+        Button btnOK = gameoverdialog.findViewById(R.id.btnOK);
+        btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View v) {
                 finish();
                 startActivity(new Intent(getApplication(), Gameintroduce.class));
             }
         });
-        bulider.show();
+        gameoverdialog.show();
     }
 
     public void win() {
         mper.release();
-        AlertDialog.Builder bulider = new AlertDialog.Builder(this);
-        bulider.setMessage("恭喜過關，成績為：" + currentScore);
-        bulider.setCancelable(false);
-        bulider.setPositiveButton("再玩一次", new DialogInterface.OnClickListener() {
+        windialog.setContentView(R.layout.win_layout_dialog);
+        windialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        ImageView imageViewClose = windialog.findViewById(R.id.imageViewClose);
+        imageViewClose.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View v) {
                 finish();
-                startActivity(new Intent(getApplicationContext(), Game.class));
             }
         });
-        bulider.setNegativeButton("結束", new DialogInterface.OnClickListener() {
+        Button btnOK = windialog.findViewById(R.id.btnOK);
+        btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View v) {
                 finish();
                 startActivity(new Intent(getApplicationContext(), Gameintroduce.class));
             }
         });
-        bulider.show();
+        windialog.show();
     }
 }
