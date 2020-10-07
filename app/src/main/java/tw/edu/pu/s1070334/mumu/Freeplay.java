@@ -474,15 +474,6 @@ public class Freeplay extends AppCompatActivity {
         guitar_h_do = MediaPlayer.create(this, R.raw.guitar_h_do);
     }
 
-//    public void createDrumList() {
-//        jazz_bigdrum = MediaPlayer.create(this, R.raw.jazz_bigdrum);
-//        jazz_smalldrum = MediaPlayer.create(this, R.raw.jazz_smalldrum);
-//        jazz_falldrum = MediaPlayer.create(this, R.raw.jazz_falldrum);
-//        jazz_footcymbals = MediaPlayer.create(this, R.raw.jazz_footcymbals);
-//        jazz_tondrum = MediaPlayer.create(this, R.raw.jazz_tondrum);
-//        jazz_cymbals = MediaPlayer.create(this, R.raw.jazz_cymbals);
-//    }
-
     public void createFluteList() {
         flute_do = MediaPlayer.create(this, R.raw.flute_do);
         flute_re = MediaPlayer.create(this, R.raw.flute_re);

@@ -78,7 +78,7 @@ public class Instrumentsintroduce extends AppCompatActivity {
         } else if (str.equals("kalinba")) {
             kalinba.setVisibility(View.VISIBLE);
             kalinbaword.setVisibility(View.VISIBLE);
-            //mper = MediaPlayer.create(this, R.raw.kalinba);
+            mper = MediaPlayer.create(this, R.raw.kalinbamusic);
             explain = MediaPlayer.create(this, R.raw.kalinbaexplain);
         } else if (str.equals("guitar")) {
             guitar.setVisibility(View.VISIBLE);
