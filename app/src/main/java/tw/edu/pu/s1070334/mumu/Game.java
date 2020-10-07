@@ -180,13 +180,13 @@ public class Game extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
-                startActivity(new Intent(getApplicationContext(), Game.class));
+                startActivity(new Intent(getApplication(), Game.class));
             }
         });
         bulider.setNegativeButton("結束", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                startActivity(new Intent(getApplicationContext(), Gameintroduce.class));
+                startActivity(new Intent(getApplication(), Gameintroduce.class));
                 finish();
             }
         });
