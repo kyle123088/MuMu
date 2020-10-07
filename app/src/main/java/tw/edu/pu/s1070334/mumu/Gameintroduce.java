@@ -33,6 +33,7 @@ public class Gameintroduce extends AppCompatActivity {
                 Intent it = new Intent();
                 it.setClass(Gameintroduce.this, Game.class);
                 startActivity(it);
+                finish();
             }
         });
 

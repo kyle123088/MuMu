@@ -146,6 +146,13 @@ public class Game extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mper.release();
+        startActivity(new Intent(getApplication(), Gameintroduce.class));
+    }
+
     public void playRandomMusic() {
         Random r = new Random();
         randomInt = r.nextInt(soundList.size());
@@ -186,8 +193,8 @@ public class Game extends AppCompatActivity {
         bulider.setNegativeButton("結束", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                startActivity(new Intent(getApplication(), Gameintroduce.class));
                 finish();
+                startActivity(new Intent(getApplication(), Gameintroduce.class));
             }
         });
         bulider.show();
@@ -208,8 +215,8 @@ public class Game extends AppCompatActivity {
         bulider.setNegativeButton("結束", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                startActivity(new Intent(getApplicationContext(), Gameintroduce.class));
                 finish();
+                startActivity(new Intent(getApplicationContext(), Gameintroduce.class));
             }
         });
         bulider.show();
