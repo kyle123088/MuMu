@@ -12,6 +12,7 @@ import static tw.edu.pu.s1070334.mumu.Freeplaychoose.choose;
 
 public class Freeplaydrum extends AppCompatActivity {
     static MediaPlayer jazz_bigdrum, jazz_smalldrum, jazz_tondrum, jazz_falldrum, jazz_footcymbals, jazz_cymbals;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

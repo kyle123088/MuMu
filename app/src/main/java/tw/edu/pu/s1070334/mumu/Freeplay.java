@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import java.util.ArrayList;
-
 import static tw.edu.pu.s1070334.mumu.Freeplaychoose.choose;
 
 public class Freeplay extends AppCompatActivity {
@@ -17,8 +15,8 @@ public class Freeplay extends AppCompatActivity {
     static MediaPlayer piano_do, piano_re, piano_mi, piano_fa, piano_so, piano_la, piano_si, piano_h_do;
     static MediaPlayer kalimba_do, kalimba_re, kalimba_mi, kalimba_fa, kalimba_so, kalimba_la, kalimba_si, kalimba_h_do;
     static MediaPlayer guitar_do, guitar_re, guitar_mi, guitar_fa, guitar_so, guitar_la, guitar_si, guitar_h_do;
-//    static MediaPlayer jazz, guitar_re, guitar_mi, guitar_fa, guitar_so, guitar_la, guitar_si, guitar_h_do;
     static MediaPlayer flute_do, flute_re, flute_mi, flute_fa, flute_so, flute_la, flute_si, flute_h_do;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,8 +86,6 @@ public class Freeplay extends AppCompatActivity {
         guitar.setVisibility(View.INVISIBLE);
         ImageView flute = findViewById(R.id.flute);
         flute.setVisibility(View.INVISIBLE);
-
-
 
 
         if (choose.equals("violin")) {
@@ -228,7 +224,8 @@ public class Freeplay extends AppCompatActivity {
 
         } else if (choose.equals("kalinba")) {
             kalinba.setVisibility(View.VISIBLE);
-            createKalimbaList();;
+            createKalimbaList();
+            ;
             Button do_l = findViewById(R.id.do_l);
             do_l.setOnClickListener(new Button.OnClickListener() {
                 @Override
@@ -295,7 +292,7 @@ public class Freeplay extends AppCompatActivity {
 
         } else if (choose.equals("guitar")) {
             guitar.setVisibility(View.VISIBLE);
-            createGuitarList();;
+            createGuitarList();
             Button do_l = findViewById(R.id.do_l);
             do_l.setOnClickListener(new Button.OnClickListener() {
                 @Override
@@ -360,7 +357,7 @@ public class Freeplay extends AppCompatActivity {
                 }
             });
 
-        }  else if (choose.equals("flute")) {
+        } else if (choose.equals("flute")) {
             flute.setVisibility(View.VISIBLE);
             createFluteList();
             Button do_l = findViewById(R.id.do_l);

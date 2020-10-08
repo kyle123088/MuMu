@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
@@ -17,7 +18,7 @@ import java.util.Vector;
 public class Game extends AppCompatActivity {
 
     static Vector<Integer> soundList = new Vector<>();
-    static int randomInt,rSound;
+    static int randomInt, rSound;
     private int currentScore = 0;
     ImageView violin, piano, kalinba, guitar, drum, flute;
     TextView score;
@@ -53,7 +54,7 @@ public class Game extends AppCompatActivity {
                     score.setText("你的分數為:" + currentScore);
                     mper.release();
                     updateSoundList();
-                    if(currentScore != 30) {
+                    if (currentScore != 30) {
                         playRandomMusic();
                     }
                 } else {
@@ -70,7 +71,7 @@ public class Game extends AppCompatActivity {
                     score.setText("你的分數為:" + currentScore);
                     mper.release();
                     updateSoundList();
-                    if(currentScore != 30) {
+                    if (currentScore != 30) {
                         playRandomMusic();
                     }
                 } else {
@@ -87,7 +88,7 @@ public class Game extends AppCompatActivity {
                     score.setText("你的分數為:" + currentScore);
                     mper.release();
                     updateSoundList();
-                    if(currentScore != 30) {
+                    if (currentScore != 30) {
                         playRandomMusic();
                     }
                 } else {
@@ -104,7 +105,7 @@ public class Game extends AppCompatActivity {
                     score.setText("你的分數為:" + currentScore);
                     mper.release();
                     updateSoundList();
-                    if(currentScore != 30) {
+                    if (currentScore != 30) {
                         playRandomMusic();
                     }
                 } else {
@@ -121,7 +122,7 @@ public class Game extends AppCompatActivity {
                     score.setText("你的分數為:" + currentScore);
                     mper.release();
                     updateSoundList();
-                    if(currentScore != 30) {
+                    if (currentScore != 30) {
                         playRandomMusic();
                     }
                 } else {
@@ -138,7 +139,7 @@ public class Game extends AppCompatActivity {
                     score.setText("你的分數為:" + currentScore);
                     mper.release();
                     updateSoundList();
-                    if(currentScore != 30) {
+                    if (currentScore != 30) {
                         playRandomMusic();
                     }
                 } else {
@@ -157,7 +158,7 @@ public class Game extends AppCompatActivity {
         mper.setLooping(true);
     }
 
-    public void loadingMusic(){
+    public void loadingMusic() {
         soundList.add(R.raw.violinmusic);
         soundList.add(R.raw.pianomusic);
         soundList.add(R.raw.kalinbamusic);
@@ -168,7 +169,7 @@ public class Game extends AppCompatActivity {
 
     public void updateSoundList() {
         soundList.remove(randomInt);
-        if(currentScore == 30){
+        if (currentScore == 30) {
             win();
         }
     }

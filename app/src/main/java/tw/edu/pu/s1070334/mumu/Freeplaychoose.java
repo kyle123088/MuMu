@@ -10,13 +10,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class Freeplaychoose extends AppCompatActivity {
-    static MediaPlayer mper;
+    static MediaPlayer mper, free_mode;
     static String choose = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_freeplaychoose);
+
+        free_mode = MediaPlayer.create(this, R.raw.free_mode);
+        free_mode.start();
 
         mper = MediaPlayer.create(this, R.raw.pick);
         mper.start();
@@ -101,6 +104,9 @@ public class Freeplaychoose extends AppCompatActivity {
         if (mper != null) {
             mper.release();
         }
+        if (free_mode != null) {
+            free_mode.release();
+        }
     }
 
     @Override
@@ -110,6 +116,9 @@ public class Freeplaychoose extends AppCompatActivity {
             mper.pause();
             mper.seekTo(0);
         }
+        if (free_mode != null && free_mode.isPlaying()) {
+            free_mode.pause();
+        }
     }
 
     @Override
@@ -117,6 +126,9 @@ public class Freeplaychoose extends AppCompatActivity {
         super.onResume();
         if (mper != null) {
             mper.start();
+        }
+        if (free_mode != null) {
+            free_mode.start();
         }
     }
 }

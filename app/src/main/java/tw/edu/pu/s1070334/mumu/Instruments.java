@@ -11,13 +11,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class Instruments extends AppCompatActivity {
-    static MediaPlayer mper;
+    static MediaPlayer mper, learning_mode;
     static String str = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instruments);
+
+        learning_mode = MediaPlayer.create(this, R.raw.learning_mode);
+        learning_mode.start();
 
         mper = MediaPlayer.create(this, R.raw.pick);
         mper.start();
@@ -104,6 +107,9 @@ public class Instruments extends AppCompatActivity {
         if (mper != null) {
             mper.release();
         }
+        if (learning_mode != null) {
+            learning_mode.release();
+        }
     }
 
     @Override
@@ -112,6 +118,9 @@ public class Instruments extends AppCompatActivity {
         if (mper != null && mper.isPlaying()) {
             mper.pause();
             mper.seekTo(0);
+        }
+        if (learning_mode != null && learning_mode.isPlaying()) {
+            learning_mode.pause();
         }
     }
 
