@@ -1,8 +1,6 @@
 package tw.edu.pu.s1070334.mumu;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
@@ -179,7 +177,7 @@ public class Game extends AppCompatActivity {
         mper.release();
         gameoverdialog.setContentView(R.layout.gameover_layout_dialog);
         gameoverdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        ImageView imageViewClose = gameoverdialog.findViewById(R.id.imageViewClose);
+        ImageView imageViewClose = gameoverdialog.findViewById(R.id.bg);
         imageViewClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -200,7 +198,7 @@ public class Game extends AppCompatActivity {
         mper.release();
         windialog.setContentView(R.layout.win_layout_dialog);
         windialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        ImageView imageViewClose = windialog.findViewById(R.id.imageViewClose);
+        ImageView imageViewClose = windialog.findViewById(R.id.bg);
         imageViewClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

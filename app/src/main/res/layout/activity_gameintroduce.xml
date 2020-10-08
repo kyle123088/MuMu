@@ -7,7 +7,7 @@
     tools:context=".Gameintroduce">
 
     <ImageView
-        android:id="@+id/imageViewClose"
+        android:id="@+id/bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
@@ -16,6 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
         <ImageView
             android:id="@+id/backbtn"
@@ -27,35 +28,54 @@
 
         <TextView
             android:id="@+id/txv"
-            android:layout_width="400dp"
-            android:layout_height="225dp"
-            android:layout_gravity="center"
-            android:text="規則介紹:\n\n請小朋友們根據聽到的音樂，選擇出對應的樂器名稱，關卡總共有六關，答對一題得到五分，滿分為三十分，請仔細作答，加油！"
-            android:textColor="@color/colorFuchsia"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp"
+            android:gravity="center"
+            android:text="請點擊按鈕"
+            android:textColor="@color/colorRed"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/gl" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
+            android:id="@+id/gl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.8" />
+            app:layout_constraintGuide_percent="0.5" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <Button
+            android:id="@+id/ruleexplain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/btn_shape"
+            android:text="查看規則"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@+id/gl2"
+            app:layout_constraintTop_toTopOf="@+id/gl" />
 
         <Button
             android:id="@+id/startgamebtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/btn_shape"
             android:text="開始遊戲"
             android:textColor="#FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline" />
+            app:layout_constraintStart_toStartOf="@+id/gl2"
+            app:layout_constraintTop_toTopOf="@+id/gl" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
