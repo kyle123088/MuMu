@@ -59,6 +59,7 @@ public class Game extends AppCompatActivity {
                     }
                 } else {
                     gameOver();
+                    soundList.clear();
                 }
             }
         });
@@ -76,6 +77,7 @@ public class Game extends AppCompatActivity {
                     }
                 } else {
                     gameOver();
+                    soundList.clear();
                 }
             }
         });
@@ -93,6 +95,7 @@ public class Game extends AppCompatActivity {
                     }
                 } else {
                     gameOver();
+                    soundList.clear();
                 }
             }
         });
@@ -110,6 +113,7 @@ public class Game extends AppCompatActivity {
                     }
                 } else {
                     gameOver();
+                    soundList.clear();
                 }
             }
         });
@@ -127,6 +131,7 @@ public class Game extends AppCompatActivity {
                     }
                 } else {
                     gameOver();
+                    soundList.clear();
                 }
             }
         });
@@ -144,6 +149,7 @@ public class Game extends AppCompatActivity {
                     }
                 } else {
                     gameOver();
+                    soundList.clear();
                 }
             }
         });
@@ -171,6 +177,7 @@ public class Game extends AppCompatActivity {
         soundList.remove(randomInt);
         if (currentScore == 30) {
             win();
+            soundList.clear();
         }
     }
 
