@@ -1,15 +1,15 @@
 package tw.edu.pu.s1070334.mumu;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
-import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
@@ -18,11 +18,13 @@ import java.util.Vector;
 public class Game extends AppCompatActivity {
 
     static Vector<Integer> soundList = new Vector<>();
-    static int randomInt,rSound;
+    static int randomInt, rSound;
     private int currentScore = 0;
+    final int maxScore = 30;
     ImageView violin, piano, kalinba, guitar, drum, flute;
     TextView score;
     MediaPlayer mper;
+    Dialog gameoverdialog, windialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class Game extends AppCompatActivity {
         drum = findViewById(R.id.drum);
         flute = findViewById(R.id.flute);
         score = findViewById(R.id.score);
+        gameoverdialog = new Dialog(this);
+        windialog = new Dialog(this);
 
         loadingMusic();
         playRandomMusic();
@@ -51,11 +55,12 @@ public class Game extends AppCompatActivity {
                     score.setText("你的分數為:" + currentScore);
                     mper.release();
                     updateSoundList();
-                    if(currentScore != 30) {
+                    if (currentScore != maxScore) {
                         playRandomMusic();
                     }
                 } else {
                     gameOver();
+                    soundList.clear();
                 }
             }
         });
@@ -68,11 +73,12 @@ public class Game extends AppCompatActivity {
                     score.setText("你的分數為:" + currentScore);
                     mper.release();
                     updateSoundList();
-                    if(currentScore != 30) {
+                    if (currentScore != maxScore) {
                         playRandomMusic();
                     }
                 } else {
                     gameOver();
+                    soundList.clear();
                 }
             }
         });
@@ -85,11 +91,12 @@ public class Game extends AppCompatActivity {
                     score.setText("你的分數為:" + currentScore);
                     mper.release();
                     updateSoundList();
-                    if(currentScore != 30) {
+                    if (currentScore != maxScore) {
                         playRandomMusic();
                     }
                 } else {
                     gameOver();
+                    soundList.clear();
                 }
             }
         });
@@ -102,11 +109,12 @@ public class Game extends AppCompatActivity {
                     score.setText("你的分數為:" + currentScore);
                     mper.release();
                     updateSoundList();
-                    if(currentScore != 30) {
+                    if (currentScore != maxScore) {
                         playRandomMusic();
                     }
                 } else {
                     gameOver();
+                    soundList.clear();
                 }
             }
         });
@@ -119,11 +127,12 @@ public class Game extends AppCompatActivity {
                     score.setText("你的分數為:" + currentScore);
                     mper.release();
                     updateSoundList();
-                    if(currentScore != 30) {
+                    if (currentScore != maxScore) {
                         playRandomMusic();
                     }
                 } else {
                     gameOver();
+                    soundList.clear();
                 }
             }
         });
@@ -136,11 +145,12 @@ public class Game extends AppCompatActivity {
                     score.setText("你的分數為:" + currentScore);
                     mper.release();
                     updateSoundList();
-                    if(currentScore != 30) {
+                    if (currentScore != maxScore) {
                         playRandomMusic();
                     }
                 } else {
                     gameOver();
+                    soundList.clear();
                 }
             }
         });
@@ -155,7 +165,7 @@ public class Game extends AppCompatActivity {
         mper.setLooping(true);
     }
 
-    public void loadingMusic(){
+    public void loadingMusic() {
         soundList.add(R.raw.violinmusic);
         soundList.add(R.raw.pianomusic);
         soundList.add(R.raw.kalinbamusic);
@@ -166,52 +176,53 @@ public class Game extends AppCompatActivity {
 
     public void updateSoundList() {
         soundList.remove(randomInt);
-        if(currentScore == 30){
+        if (currentScore == 30) {
             win();
+            soundList.clear();
         }
     }
 
     public void gameOver() {
         mper.release();
-        AlertDialog.Builder bulider = new AlertDialog.Builder(this);
-        bulider.setMessage("哎呀你答錯了，本次成績為："+ currentScore +"，別氣餒下次再挑戰");
-        bulider.setCancelable(false);
-        bulider.setPositiveButton("再玩一次", new DialogInterface.OnClickListener() {
+        gameoverdialog.setContentView(R.layout.gameover_layout_dialog);
+        gameoverdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        gameoverdialog.setCanceledOnTouchOutside(false);
+        ImageView imageViewClose = gameoverdialog.findViewById(R.id.bg);
+        imageViewClose.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-                startActivity(new Intent(getApplication(), Game.class));
-            }
-        });
-        bulider.setNegativeButton("結束", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                startActivity(new Intent(getApplication(), Gameintroduce.class));
+            public void onClick(View v) {
                 finish();
             }
         });
-        bulider.show();
+        Button btnOK = gameoverdialog.findViewById(R.id.btnOK);
+        btnOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        gameoverdialog.show();
     }
 
     public void win() {
         mper.release();
-        AlertDialog.Builder bulider = new AlertDialog.Builder(this);
-        bulider.setMessage("恭喜過關，成績為：" + currentScore);
-        bulider.setCancelable(false);
-        bulider.setPositiveButton("再玩一次", new DialogInterface.OnClickListener() {
+        windialog.setContentView(R.layout.win_layout_dialog);
+        windialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        windialog.setCanceledOnTouchOutside(false);
+        ImageView imageViewClose = windialog.findViewById(R.id.bg);
+        imageViewClose.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-                startActivity(new Intent(getApplicationContext(), Game.class));
-            }
-        });
-        bulider.setNegativeButton("結束", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                startActivity(new Intent(getApplicationContext(), Gameintroduce.class));
+            public void onClick(View v) {
                 finish();
             }
         });
-        bulider.show();
+        Button btnOK = windialog.findViewById(R.id.btnOK);
+        btnOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        windialog.show();
     }
 }

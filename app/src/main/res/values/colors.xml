@@ -6,4 +6,8 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
     <color name="colorFuchsia">#FF4085</color>
+    <color name="colorYellow">#FFC107</color>
+    <color name="colorRed">#D3443A</color>
+    <color name="colorGreen">#00EC00</color>
+    <color name="colorDeepRed">#FF0000</color>
 </resources>

@@ -1,23 +1,26 @@
 package tw.edu.pu.s1070334.mumu;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class Instruments extends AppCompatActivity {
-    static MediaPlayer mper;
+    static MediaPlayer mper, learning_mode;
     static String str = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instruments);
+
+        learning_mode = MediaPlayer.create(this, R.raw.learning_mode);
+        learning_mode.start();
+        learning_mode.setLooping(true);
 
         mper = MediaPlayer.create(this, R.raw.pick);
         mper.start();
@@ -104,6 +107,9 @@ public class Instruments extends AppCompatActivity {
         if (mper != null) {
             mper.release();
         }
+        if (learning_mode != null) {
+            learning_mode.release();
+        }
     }
 
     @Override
@@ -112,6 +118,9 @@ public class Instruments extends AppCompatActivity {
         if (mper != null && mper.isPlaying()) {
             mper.pause();
             mper.seekTo(0);
+        }
+        if (learning_mode != null && learning_mode.isPlaying()) {
+            learning_mode.pause();
         }
     }
 
