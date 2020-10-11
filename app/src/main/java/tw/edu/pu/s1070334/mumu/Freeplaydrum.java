@@ -1,14 +1,12 @@
 package tw.edu.pu.s1070334.mumu;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import static tw.edu.pu.s1070334.mumu.Freeplaychoose.choose;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Freeplaydrum extends AppCompatActivity {
     static MediaPlayer jazz_bigdrum, jazz_smalldrum, jazz_tondrum, jazz_falldrum, jazz_footcymbals, jazz_cymbals;

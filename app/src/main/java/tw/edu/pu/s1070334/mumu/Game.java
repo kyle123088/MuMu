@@ -186,7 +186,7 @@ public class Game extends AppCompatActivity {
         mper.release();
         gameoverdialog.setContentView(R.layout.gameover_layout_dialog);
         gameoverdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        gameoverdialog.setCanceledOnTouchOutside(true);
+        gameoverdialog.setCanceledOnTouchOutside(false);
         ImageView imageViewClose = gameoverdialog.findViewById(R.id.bg);
         imageViewClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -208,7 +208,7 @@ public class Game extends AppCompatActivity {
         mper.release();
         windialog.setContentView(R.layout.win_layout_dialog);
         windialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        windialog.setCanceledOnTouchOutside(true);
+        windialog.setCanceledOnTouchOutside(false);
         ImageView imageViewClose = windialog.findViewById(R.id.bg);
         imageViewClose.setOnClickListener(new View.OnClickListener() {
             @Override
