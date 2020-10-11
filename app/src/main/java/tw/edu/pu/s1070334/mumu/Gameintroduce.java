@@ -22,6 +22,7 @@ public class Gameintroduce extends AppCompatActivity {
 
         game_mode = MediaPlayer.create(this, R.raw.game_mode);
         game_mode.start();
+        game_mode.setLooping(true);
 
         mper = MediaPlayer.create(this, R.raw.gamerule);
 

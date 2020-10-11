@@ -20,6 +20,7 @@ public class Freeplaychoose extends AppCompatActivity {
 
         free_mode = MediaPlayer.create(this, R.raw.free_mode);
         free_mode.start();
+        free_mode.setLooping(true);
 
         mper = MediaPlayer.create(this, R.raw.pick);
         mper.start();
